@@ -36,6 +36,4 @@ RUN pip install --upgrade pip
 # Setup workdir
 WORKDIR /workspace
 
-RUN pip --no-cache-dir install -e .
-
 CMD ["sh","-c", "jupyter notebook --ip=0.0.0.0 --no-browser --allow-root --port=8888 --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url=${NB_PREFIX}"]
